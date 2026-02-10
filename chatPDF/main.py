@@ -16,6 +16,7 @@ import os
 st.title("chatPDF")
 st.write("---")
 
+openai_key = st.text_input("OpenAI API Key를 입력하세요", type="password")
 uploaded_file = st.file_uploader("PDF 파일을 올려주세요", type=['pdf'])
 st.write("---")
 
@@ -41,6 +42,7 @@ if uploaded_file is not None:
 
     embeddings_model = OpenAIEmbeddings(
         model= "text-embedding-3-large",
+        openai_api_key=openai_key,
     )
 
     db = Chroma.from_documents(texts, embeddings_model)
