@@ -8,6 +8,7 @@ from langchain_classic import hub
 from langchain_core.output_parsers import StrOutputParser
 from langchain_core.runnables import RunnablePassthrough
 import streamlit as st
+from langchain_core.callbacks.base import BaseCallbackHandler
 import tempfile
 import os
 # from dotenv import load_dotenv
